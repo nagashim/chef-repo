@@ -1,0 +1,33 @@
+{
+    "run_list": [
+        "recipe[yum]",
+        "recipe[mysql::server]",
+        "recipe[mysql::client]",
+        "recipe[nginx]",
+        "recipe[postgresql::server]",
+        "recipe[postgresql::client]",
+        "recipe[redisio]",
+        "recipe[java]",
+        "recipe[jenkins]",
+        "recipe[git]"
+    ],
+    "mysql": {
+        "version": "5.5",
+        "server_root_password": "password"
+    },
+    "postgresql": {
+        "password": {
+            "postgres": "md532e12f215ba27cb750c9e093ce4b5127"
+        }
+    },
+    "java": {
+        "install_flavor": "oracle",
+        "jdk_version": 7,
+        "oracle": {
+            "accept_oracle_download_terms": true
+        }
+    },
+    "automatic": {
+        "ipaddress": "ci"
+    }
+}
